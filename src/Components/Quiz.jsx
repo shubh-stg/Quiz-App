@@ -3,7 +3,7 @@ import {data} from "../assets/Data"
 import { useRef, useState } from "react"
 const Quiz=()=>{
 
-const [index,setindex]=useState(2); //to maintain question number
+const [index,setindex]=useState(0); //to maintain question number
 const [question,setquestion]=useState(data[index]); //to display the question correcpoding to tthe current index
 const[lock ,setlock]=useState(false); //for selecting a single option
 
@@ -31,6 +31,22 @@ const checkans=(event,givenanswer,question)=>{
 
 }
 
+const next=()=>{
+  setindex(prev => {
+    const newIndex = prev + 1;
+    setquestion(data[newIndex]);
+    return newIndex;
+  });
+ 
+  setlock(false);
+
+ 
+  option_array.map((option)=>{
+    option.current.classList.remove("correct");
+    option.current.classList.remove("wrong");
+  })
+}
+
  return <div className={styles.container}>
 
   <h1>QUIZ APP</h1>
@@ -42,8 +58,8 @@ const checkans=(event,givenanswer,question)=>{
     <li ref={Option3} onClick={(e)=>checkans(e,3,question)}>{question.option3}</li>
     <li ref={Option4} onClick={(e)=>checkans(e,4,question)}>{question.option4}</li>
   </ul>
-  <button>Next</button>
-  <div className={styles.index}>1 of 5 questions</div>
+  <button onClick={next}>Next</button>
+  <div className={styles.index}>{index+1} of {data.length} questions</div>
 
  </div>
 }
