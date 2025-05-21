@@ -1,12 +1,42 @@
-# React + Vite
+# Basic React Quiz App (Hardcoded Questions)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple **React-based Quiz App** that uses **5 hardcoded multiple-choice questions**. It's designed for learning purposes and demonstrates basic React concepts like state, event handling, and conditional rendering.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 5 **predefined quiz questions** with 4 options each
+- Tracks and displays the **user’s score**
+- Highlights correct and incorrect answers
+- **"Next"** button to move to the next question
+- **"Restart"** and **"Try Again"** functionality after the quiz ends
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧑‍💻 Tech Stack
+
+- **React** (Functional Components & Hooks)
+- **JavaScript** (ES6+)
+- **CSS** or CSS Modules for basic styling
+
+---
+
+## 🧠 Sample Questions
+
+Example structure of a question object:
+
+```js
+{
+  question: "What is the capital of France?",
+  option1: "Berlin",
+  option2: "Madrid",
+  option3: "Paris",
+  option4: "Rome",
+  ans: 3 // means option3 is correct
+}
+
+
+
+
+
